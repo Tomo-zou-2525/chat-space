@@ -1,0 +1,66 @@
+* {
+  box-sizing: border-box; //この設定をすることで、paddingやborderの設定を行っても、要素の大きさがwidthやheightで指定したサイズのまま変わらなくなります。
+}
+
+.wrapper{
+  display: flex;
+  height: 100vh;
+  // width: 100%;
+  // flex-wrap: wrap;
+  .side-bar{
+    background-color: #2f3e51;
+    width: 300px;
+    &__header{
+      background-color: #253141;
+      height: 100px;
+      display: flex; //ここのflex 横並びがなぜセンターに？
+      align-items: center;
+      &__box{
+          background-color: #d8d8d8;
+          height: 20px;
+          width: 260px;
+          margin: 0 auto;
+          line-height: 20px;
+          // display: flex;
+          justify-content: space-between;
+          font-weight: bold;
+        &__user{
+
+        }
+        &__menu{
+          display: flex;
+          width: 60px;
+          background-color: red;
+          &__new-group{
+  
+          }
+          &__edit-user{
+            
+          }
+        }
+      }
+    }
+  }
+
+  .chat-main{
+    width: calc(100vw - 300px);
+    &__header{
+      background-color: #fff;
+      height: 100px;
+      border-bottom: 1px solid #fafafa;
+    }
+    &__message{
+      background-color: green;
+      height: calc(100vh - 190px);
+      clear: both;
+    }
+    &__footer{
+        background-color: #d2d2d2;
+        height: 90px;
+
+    }
+    
+
+
+  }
+}
