@@ -5,7 +5,18 @@
         tomo
       .side-bar__header__box__menu
         .side-bar__header__box__menu__new-group
-          A
+        -# = link_to 表示する文言, URLパス, メソッド, クラス
+        -# <i class="far fa-edit"></i> Font-awesomeのソース
+        = link_to "#", class: "contents__btn" do
+          = icon("fas", "edit", class: "contents__btn--icon")
+          %span<>
         .side-bar__header__box__menu__edit-user
-          B
+        = link_to "#", class: "contents__btn" do
+          = icon("fas", "cog", class: "contents__btn--icon")
+          %span<>
   .side-bar__groups
+    .side-bar__groups__name
+      = link_to "#", class: "groups__btn" do
+        テックキャンプ７７期
+    .side-bar__groups__message
+      まだメッセージがありません
