@@ -1,0 +1,35 @@
+.chat-main
+  .chat-main__header
+    .chat-main__header__left-box
+      .chat-main__header__left-box__current-group
+        test
+      .chat-main__header__left-box__member-list
+        Member: 力道三 越中詩郎 小橋健太
+    .chat-main__header__edit-btn
+      = link_to "#", class: "chat-main__header__edit-btn__color" do
+        Edit
+  .chat-main__messages
+    .chat-main__messages__box
+      .chat-main__messages__box__info
+        .chat-main__messages__box__info__user Tomo
+
+        .chat-main__messages__box__info__date 2020/05/24(sun) 10:45
+      .chat-main__messages__box__text おはようございます
+    .chat-main__messages__box
+      .chat-main__messages__box__info
+        .chat-main__messages__box__info__user Tomo
+        .chat-main__messages__box__info__date 2020/05/24(sun) 12:00
+      .chat-main__messages__box__text こんにちは
+    .chat-main__messages__box
+      .chat-main__messages__box__info
+        .chat-main__messages__box__info__user Tomo
+        .chat-main__messages__box__info__date 2020/05/24(sun) 18:45
+      .chat-main__messages__box__text こんばんは
+  .chat-main__form
+    .chat-main__form__input-box
+      .chat-main__form__input-box__text 
+        %input.chat-main__form__input-box__text__flame{placeholder:"type a message"}
+        %label{class: "chat-main__form__input-box__text__image"} 
+          = icon("fas", "image", class: "chat-main__form__input-box__text__image__link")
+          %input{type: "file", class: "chat-main__form__input-box__text__image__file"}
+      %input.chat-main__form__input-box__submit-btn{ :type => "submit", :value => "Send" }
