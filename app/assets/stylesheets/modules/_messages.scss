@@ -9,6 +9,7 @@
   .side-bar{
     background-color: #2f3e51;
     width: 300px;
+    float: left;
     &__header{
       background-color: #253141;
       height: 100px;
@@ -23,7 +24,7 @@
           display: flex;
           justify-content: space-between;
           font-weight: bold;
-          overflow: scroll;
+          // overflow: scroll; おそらく下段のgroupsに
         &__user{
           font-size: 16px; 
         }
