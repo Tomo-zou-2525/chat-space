@@ -6,7 +6,7 @@
       .chat-main__header__left-box__member-list
         Member: 力道三 越中詩郎 小橋健太
     .chat-main__header__edit-btn
-      = link_to "#", class: "chat-main__header__edit-btn__color" do
+      = link_to edit_group_path(current_user), class: "chat-main__header__edit-btn__color" do
         Edit
   .chat-main__messages
     .chat-main__messages__box
