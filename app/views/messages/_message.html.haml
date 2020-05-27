@@ -1,0 +1,18 @@
+.chat-main__form__input-box
+  .chat-main__form__input-box__text 
+    = form_for [@group, @message] do |f|
+      = f.text_field :body, class: 'chat-main__form__input-box__text__flame', placeholder: 'type a message'
+      = f.label :image, class: 'chat-main__form__input-box__text__image' do
+        = icon('fas', 'image', class: 'chat-main__form__input-box__text__image__link')
+        = f.file_field :image, class: 'chat-main__form__input-box__text__image__file'
+      = f.submit 'Send', class: "chat-main__form__input-box__submit-btn"
+
+.chat-main__form__input-box
+  .chat-main__form__input-box__text 
+    = form_for [@group, @message] do |f| #@groupは送信先の指定 @messageはルーティングのネスト構造からみるに、＠groupと＠messageの関連性をつける為引数として記述 空のインスタンスを作っておくこと
+      %input.chat-main__form__input-box__text__flame{placeholder:"type a message"}
+      %label{class: "chat-main__form__input-box__text__image"} 
+        = icon("fas", "image", class: "chat-main__form__input-box__text__image__link")
+        %input{type: "file", class: "chat-main__form__input-box__text__image__file"}
+  %input.chat-main__form__input-box__submit-btn{ :type => "submit", :value => "Send"}  
+-#  name属性の見方

@@ -15,7 +15,7 @@
   .side-bar__groups
     - current_user.groups.each do |group|
       .side-bar__groups__name
-        = link_to "#", class: "groups__btn" do
-          = group.name
+        = link_to group_messages_path(group), class: "groups__btn" do
+          = group.name #group_messages_pathに引数は何？
       .side-bar__groups__message
-        まだメッセージがありません
+        = group.show_last_message
