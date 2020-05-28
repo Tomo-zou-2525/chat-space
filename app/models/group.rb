@@ -9,8 +9,8 @@ class Group < ApplicationRecord
 # has_manyの引数に「アソシエーションを組みたいテーブル名」を、:throughのバリューに「中間テーブル名」を指定します。これによって、「group.users」といった呼び出し方ができるようになります。
   def show_last_message
     if (last_message = messages.last).present?
-      if last_message.content?
-        last_message.content
+      if last_message.body?
+        last_message.body
       else
         '画像が投稿されています'
       end
