@@ -11,11 +11,13 @@ class MessagesController < ApplicationController
   def create
     @message = @group.messages.new(message_params) #プライベートメソッドを経由して安全性を確保 ＠groupはどこからくる？ set_group↓
     if @message.save #messageが保存できたら、のif文
-      redirect_to group_messages_path, notice: "メッセージが送信されました"
+      respond_to do |format|
+        format.json
+      end
     else
       @messages = @group.messages.includes(:user) #七行目に同じ
       flash.now[:alert] = "メッセージを入力してください"
-      render :index #このindexは上記のindex?
+      render :index #このindexは上記のindex
     end
   end 
 
