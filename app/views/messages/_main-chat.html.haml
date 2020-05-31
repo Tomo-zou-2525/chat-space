@@ -9,6 +9,7 @@
           = user.name
     = link_to edit_group_path(current_user), class: "chat-main__header__edit-btn" do
       Edit
+      
   .chat-main__messages
     = render @messages
 
@@ -20,3 +21,4 @@
           = icon('fas', 'image', class: 'input-box__image__link')
           = f.file_field :image, class: 'input-box__image__file'
       = f.submit 'Send', class: "message__submit-btn"
+      -# , disabled
