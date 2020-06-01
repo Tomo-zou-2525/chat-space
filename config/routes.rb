@@ -6,5 +6,9 @@ Rails.application.routes.draw do
   resources :users, only: [:index, :edit, :update] 
   resources :groups, only: [:new, :create, :edit, :update, :index] do
     resources :messages, only: [:index, :create]
-  end
+
+    namespace :api do
+      resources :messages, only: :index, defaults: { format: 'json' }
+    end
+  end #defaultsオプションを利用して、このルーティングが来たらjson形式でレスポンスするよう指定しています。
 end
