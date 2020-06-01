@@ -70,7 +70,6 @@ $(function(){
   var reloadMessages = function() {
     //カスタムデータ属性を利用し、ブラウザに表示されている最新メッセージのidを取得
     var last_message_id = $('.chat-main__messages__box:last').data("message-id");
-    console.log(last_message_id);
     $.ajax({
       //groups/id番号/api/messagesとなるよう文字列を書く
       url: "api/messages", //ルーティング設定したhttpメソッドをgetに指定
