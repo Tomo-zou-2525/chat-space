@@ -16,7 +16,6 @@
       display: flex; 
       align-items: center;
       &__box{
-          background-color: #d8d8d8;
           height: 20px;
           width: 260px;
           margin: 0 auto;
@@ -27,6 +26,7 @@
           // overflow: scroll; おそらく下段のgroupsに
         &__user{
           font-size: 16px; 
+          color: #d8d8d8;
         }
         &__menu{
           display: flex;
