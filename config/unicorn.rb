@@ -14,7 +14,7 @@ pid "#{app_path}/tmp/pids/unicorn.pid"
 # Unicornは、起動する際にプロセスidが書かれたファイルを生成します。その場所を指定します。
 
 #ポート番号を指定
-listen 3000 
+listen "#{app_path}/tmp/sockets/unicorn.sock"
 #どのポート番号のリクエストを受け付けることにするかを決定します。今回は、3000番ポートを指定しています。
 
 #エラーのログを記録するファイルを指定
