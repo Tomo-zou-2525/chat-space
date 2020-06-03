@@ -2,6 +2,10 @@
 # capistranoのバージョンを記載。固定のバージョンを利用し続け、バージョン変更によるトラブルを防止する
 lock '3.14.0'
 
+# secrets.yml用のシンボリックリンクを追加
+set :linked_files, %w{ config/secrets.yml }
+# set :linked_filesで指定されたファイルは、元々のディレクトリを参照する代わりに、shared/元々のディレクトリ構成を参照するようになります
+
 # Capistranoのログの表示に利用する
 set :application, 'chat-space'
 
@@ -31,6 +35,20 @@ namespace :deploy do
   task :restart do
     invoke 'unicorn:restart'
   end
+
+
+  # desc upload secrets.yml以下の記述は、ローカル環境にあるconfig/secrets.ymlを本番環境のshared/config/secrets.ymlに反映するための設定を行なっています。これで、.gitignoreに記載されているsecrets.ymlを、Githubを経由せずにデプロイすることができます。
+  desc 'upload secrets.yml'
+  task :upload do
+    on roles(:app) do |host|
+      if test "[ ! -d #{shared_path}/config ]"
+        execute "mkdir -p #{shared_path}/config"
+      end
+      upload!('config/secrets.yml', "#{shared_path}/config/secrets.yml")
+    end
+  end
+  before :starting, 'deploy:upload'
+  after :finishing, 'deploy:cleanup'
 end
 
 # DSL
