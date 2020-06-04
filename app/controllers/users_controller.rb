@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     private
 
     def user_params #ストロングパラメータ
-      params.requier(:user).permit(:name, :email)
+      params.require(:user).permit(:name, :email)
     end  #requireメソッドがデータのオブジェクト名を定める
          #params.permit(:キー名, :キー名)
 end
