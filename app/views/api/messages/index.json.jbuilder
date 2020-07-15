@@ -5,3 +5,7 @@ json.array! @messages do |message|
   json.user_name message.user.name
   json.id message.id #idもデータとして渡す
 end
+
+# ajaxの流れ
+# jquery-controller-jbuilder
+# jsonにデータを渡すにあたり、どの値を渡すかの記述

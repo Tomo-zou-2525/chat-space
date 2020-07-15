@@ -17,9 +17,9 @@ class MessagesController < ApplicationController
     else
       @messages = @group.messages.includes(:user) #七行目に同じ
       flash.now[:alert] = "メッセージを入力してください"
-      render :index #このindexは上記のindex
+      render :index #これは５行目のindex
     end
-  end 
+  end
 
   private
 
